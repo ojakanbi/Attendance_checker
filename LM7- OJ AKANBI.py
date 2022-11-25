@@ -19,6 +19,7 @@ student_attendance_unknown = []
 counter = 0
 
 # setting the variable for the files that are getting inputted
+# These files are pertaining towards my own personal file on my desktop
 hold_roster_file_name = "/Users/ojakanbi/Desktop/IST140_Class_Roster.txt"
 hold_students_present_file_name = "/Users/ojakanbi/Desktop/meeting_saved_chat.txt"
 (os.path.isfile(hold_students_present_file_name))  # finds if the file is on the desktop
@@ -27,8 +28,6 @@ hold_students_present_file_name = "/Users/ojakanbi/Desktop/meeting_saved_chat.tx
 full_file_path_roster = hold_roster_file_name
 full_file_path_students_present = hold_students_present_file_name
 
-
-# opens a file for reading and writing, placing the pointer at the beginning of the file
 
 def add_to_roster(name, email):
     global counter
@@ -40,10 +39,8 @@ def add_to_roster(name, email):
 def import_student_roster():  # opens a file for reading and writing, placing the pointer at the beginning of the file
     global counter
     global total_number_of_students
-
+# opens a file for reading and writing, placing the pointer at the beginning of the file
     with open(full_file_path_roster, "r+") as tmp_roster:
-        # for line in tmp_roster:
-        # print(line, end='')
         tmp_roster_file = tmp_roster.readlines()
 
         for student in tmp_roster_file:
